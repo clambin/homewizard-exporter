@@ -32,6 +32,8 @@ func main() {
 	}
 	logger := slog.New(slog.NewTextHandler(os.Stderr, &opt))
 
+	logger.Info("Starting homewizard exporter", "version", version)
+
 	c := collector.Collector{
 		Client: &homewizard.Client{
 			HTTPClient: http.DefaultClient,
@@ -39,7 +41,6 @@ func main() {
 		},
 		Logger: logger,
 	}
-
 	prometheus.MustRegister(c)
 
 	http.Handle("/metrics", promhttp.Handler())

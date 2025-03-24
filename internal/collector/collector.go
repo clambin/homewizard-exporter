@@ -51,7 +51,7 @@ func (c Collector) Describe(ch chan<- *prometheus.Desc) {
 func (c Collector) Collect(ch chan<- prometheus.Metric) {
 	measurement, err := c.Client.GetRecentMeasurement(context.Background())
 	if err != nil {
-		c.Logger.Error("failed to collect homewizard metrics: ", err)
+		c.Logger.Error("failed to collect homewizard metrics", "err", err)
 		return
 	}
 	ch <- prometheus.MustNewConstMetric(currentPower, prometheus.GaugeValue, measurement.ActivePowerW)
