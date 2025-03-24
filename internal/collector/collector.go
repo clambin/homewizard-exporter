@@ -56,6 +56,6 @@ func (c Collector) Collect(ch chan<- prometheus.Metric) {
 	}
 	ch <- prometheus.MustNewConstMetric(currentPower, prometheus.GaugeValue, measurement.ActivePowerW)
 	ch <- prometheus.MustNewConstMetric(currentCurrent, prometheus.GaugeValue, measurement.ActiveCurrentL1A)
-	ch <- prometheus.MustNewConstMetric(currentVoltage, prometheus.GaugeValue, measurement.ActiveCurrentL1A)
+	ch <- prometheus.MustNewConstMetric(currentVoltage, prometheus.GaugeValue, measurement.ActiveVoltageL1V)
 	ch <- prometheus.MustNewConstMetric(peakPower, prometheus.GaugeValue, measurement.MontlyPowerPeakW)
 }
