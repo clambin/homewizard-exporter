@@ -41,7 +41,7 @@ func main() {
 		},
 		Logger: logger,
 	}
-	prometheus.MustRegister(c)
+	prometheus.MustRegister(&c)
 
 	http.Handle("/metrics", promhttp.Handler())
 	if err := http.ListenAndServe(*addr, nil); !errors.Is(err, http.ErrServerClosed) {
