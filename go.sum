@@ -1,5 +1,7 @@
-codeberg.org/clambin/go-homewizard v0.0.1 h1:DaIl2/PbPE/uCkGW9R4z9BULiAP9I4U5PsdtjLgzCnk=
-codeberg.org/clambin/go-homewizard v0.0.1/go.mod h1:ryHFErkH/uTAnRzz3vcOBINFBzE8m8O5yPkFCKr6dxA=
+codeberg.org/clambin/go-common/testutils v0.6.0 h1:mzxhyKBzb/zV0R5ZFpfVHKXtlmGxmxuhE7PnhPNeMvw=
+codeberg.org/clambin/go-common/testutils v0.6.0/go.mod h1:9tB1/HAyA9ypRrY/nCB1uCs/xXbArm/XOtLbUhD0W6g=
+codeberg.org/clambin/go-homewizard v0.1.0 h1:3+76z9VycpxVRo/PKCo/XDs0XtvfcyVjlqK6dgH8bKE=
+codeberg.org/clambin/go-homewizard v0.1.0/go.mod h1:lEzono/LUcCU/nqhlIn7nU7wjBiLlJoAt1fTI7HeHIU=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=

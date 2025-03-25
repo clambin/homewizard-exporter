@@ -38,7 +38,7 @@ type Collector struct {
 }
 
 type HomeWizardClient interface {
-	GetRecentMeasurement(ctx context.Context) (*homewizard.RecentMeasurement, error)
+	GetRecentMeasurement(ctx context.Context) (homewizard.RecentMeasurement, error)
 }
 
 func (c Collector) Describe(ch chan<- *prometheus.Desc) {
