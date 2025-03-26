@@ -3,7 +3,7 @@ module github.com/clambin/homewizard-exporter
 go 1.24
 
 require (
-	codeberg.org/clambin/go-homewizard v0.1.0
+	codeberg.org/clambin/go-homewizard v0.1.1
 	github.com/prometheus/client_golang v1.21.1
 )
 
