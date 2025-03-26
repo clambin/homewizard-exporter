@@ -16,7 +16,7 @@ jobs:
       - test
     uses: clambin/workflows/.github/workflows/build.yaml@main
     with:
-      image: clambin/homewizard-exporter
+      image: ghcr.io/clambin/homewizard-exporter
       dockerfile: Dockerfile
   release:
     needs:
