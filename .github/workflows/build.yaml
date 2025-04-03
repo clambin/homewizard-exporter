@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - bld
 permissions:
   contents: read
   packages: write

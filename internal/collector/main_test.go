@@ -1,21 +1,28 @@
 package collector
 
 import (
+	"codeberg.org/clambin/go-common/testutils"
 	"codeberg.org/clambin/go-homewizard"
 	"context"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/testutil"
 	"log/slog"
 	"strings"
 	"testing"
+	"time"
 )
 
-func TestCollector(t *testing.T) {
-	c := Collector{
-		Client: &fakeClient{},
-		Logger: slog.New(slog.DiscardHandler),
-	}
+func Test_run(t *testing.T) {
+	r := prometheus.NewPedanticRegistry()
+	var client fakeClient
+	go func() {
+		if err := run(client, r, ":0", slog.New(slog.DiscardHandler)); err != nil {
+			t.Errorf("error running fake collector: %v", err)
+		}
+	}()
 
-	if err := testutil.CollectAndCompare(&c, strings.NewReader(`
+	if !testutils.Eventually(func() bool {
+		err := testutil.CollectAndCompare(r, strings.NewReader(`
 # HELP homewizard_current_current Current current (in A)
 # TYPE homewizard_current_current gauge
 homewizard_current_current 10
@@ -31,8 +38,11 @@ homewizard_current_voltage 240
 # HELP homewizard_peak_power Latest peak power (in W)
 # TYPE homewizard_peak_power gauge
 homewizard_peak_power 6000
-`)); err != nil {
-		t.Errorf("unexpected collecting result:\n%v", err)
+`))
+		//t.Log(err)
+		return err == nil
+	}, time.Second, 100*time.Millisecond) {
+		t.Error("timed out waiting for metrics")
 	}
 }
 
