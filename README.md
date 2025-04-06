@@ -4,6 +4,8 @@
 [![go report card](https://goreportcard.com/badge/github.com/clambin/homewizard-exporter)](https://goreportcard.com/report/github.com/clambin/homewizard-exporter)
 [![build](https://github.com/clambin/homewizard-exporter/workflows/build/badge.svg)](https://github.com/clambin/homewizard-exporter/actions)
 
+Moved to https://codeberg.org/clambin/homewizard-exporter
+
 ## Authors
 
 * **Christophe Lambin**
